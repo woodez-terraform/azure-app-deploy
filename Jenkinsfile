@@ -37,7 +37,7 @@ pipeline {
                sh """
                   cd appdeploy
                   echo "Deploying code to ${params.Appservice}"
-                  az webapp up -l ${params.Location} -g ${params.Resourcegroup} -p ${params.Appserviceplan} -n ${params.Appservice} --sku ${params.size}
+                  az webapp up -l ${params.Location} -g ${params.Resourcegroup} -p ${params.Appserviceplan} -n ${params.Appservice} --sku FREE
                """
         }
     }
