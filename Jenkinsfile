@@ -7,7 +7,7 @@ pipeline {
       string(defaultValue: 'woodez-app-rg', name: 'Resourcegroup', description: 'Azure resourcegroup', trim: true)
       string(defaultValue: 'woodez-appserviceplan', name: 'Appserviceplan', description: 'App Service Plan', trim: true)
       string(defaultValue: 'woodez-app-service', name: 'Appservice', description: 'App Service Name', trim: true)
-      string(defaultValue: 'https://github.com/Azure-Samples/python-docs-hello-django.git', name: 'appurl', description: 'git url for app code')
+      string(defaultValue: 'https://github.com/woodez-terraform/python-docs-hello-django.git', name: 'appurl', description: 'git url for app code')
       choice(choices: ['Free'], name: 'tier', description: 'app service plan tier')
       choice(choices: ['F1'], name: 'size', description: 'app service plan size')
   }
