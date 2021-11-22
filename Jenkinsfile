@@ -35,8 +35,7 @@ pipeline {
     stage('Deploy app code to azure app service'){
         steps {
                sh """
-                  ls -la
-                  cd appdeplopy
+                  cd appdeploy
                   echo "Deploying code to ${params.Appservice}"
                   az webapp up -l ${params.Location} -g ${params.Resourcegroup} -p ${params.Appserviceplan} -n ${params.Appservice} --sku ${params.size}
                """
