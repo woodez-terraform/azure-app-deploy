@@ -24,8 +24,8 @@ pipeline {
         steps {
             script {
                     sh """
-                       [[ -d "appdeploy" ]] && rm -rf appdeploy
-                       git clone ${params.appurl} appdeploy
+                       [[ -d "python-docs-hello-django" ]] && rm -rf python-docs-hello-django
+                       git clone ${params.appurl}
                     """    
              
             }
@@ -35,7 +35,7 @@ pipeline {
     stage('Deploy app code to azure app service'){
         steps {
                sh """
-                  cd appdeploy
+                  cd python-docs-hello-django
                   echo "Deploying code to ${params.Appservice}"
                   ls -la
                   az webapp up -l ${params.Location} -g ${params.Resourcegroup} -p ${params.Appserviceplan} -n ${params.Appservice} --sku FREE
